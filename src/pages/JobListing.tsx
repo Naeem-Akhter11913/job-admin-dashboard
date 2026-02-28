@@ -1,6 +1,8 @@
+import Paper from "@mui/material/Paper"
+
 const JobListing = () => {
   return (
-    <div>JobListing</div>
+    <Paper elevation={1} sx={{p: 2}}>JobListing</Paper>
   )
 }
 

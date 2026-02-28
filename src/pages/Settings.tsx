@@ -1,6 +1,8 @@
+import Paper from "@mui/material/Paper"
+
 const Settings = () => {
   return (
-    <div>Settings</div>
+    <Paper elevation={1} sx={{p:2}}>Settings</Paper>
   )
 }
 

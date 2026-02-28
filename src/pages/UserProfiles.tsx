@@ -1,7 +1,8 @@
+import Paper from "@mui/material/Paper"
 
 const UserProfiles = () => {
   return (
-    <div>UserProfiles</div>
+    <Paper elevation={1} sx={{p:2}}>UserProfiles</Paper>
   )
 }
 
