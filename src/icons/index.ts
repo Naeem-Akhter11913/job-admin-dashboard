@@ -52,8 +52,16 @@ import { ReactComponent as ChatIcon } from "./chat.svg?react";
 import { ReactComponent as MoreDotIcon } from "./moredot.svg?react";
 import { ReactComponent as AlertHexaIcon } from "./alert-hexa.svg?react";
 import { ReactComponent as ErrorHexaIcon } from "./info-hexa.svg?react";
+import { ReactComponent as LogoutUser } from './logout.svg?react';
+import { ReactComponent as Settings } from './settings.svg?react';
+import { ReactComponent as JobListingIcon } from './Job-listing.svg?react';
+import { ReactComponent as PostJob } from './post-job.svg?react';
 
 export {
+  PostJob,
+  JobListingIcon,
+  Settings,
+  LogoutUser,
   ErrorHexaIcon,
   AlertHexaIcon,
   MoreDotIcon,
