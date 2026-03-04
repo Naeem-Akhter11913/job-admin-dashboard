@@ -1,38 +1,46 @@
-import { Grid, styled } from "@mui/material"
-import Paper from "@mui/material/Paper"
-import JobDetailsCard from "../components/jobDetails/JobDetailsCard";
+import { styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
+import Masonry from "@mui/lab/Masonry";
 
+import JobDetailsCard from "../components/jobDetails/JobDetailsCard";
+import SalaryExperience from "../components/postJob/SalaryExperience";
+import CompanyInfo from "../components/postJob/CompanyInfo";
+import Requirements from "../components/postJob/Requirements";
+import ApplicationSettings from "../components/postJob/ApplicationSettings";
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: '#fff',
-  ...theme.typography.body2,
+  backgroundColor: "#fff",
   padding: theme.spacing(1),
-  textAlign: 'center',
-  color: (theme.vars ?? theme).palette.text.secondary,
-  ...theme.applyStyles('dark', {
-    backgroundColor: '#1A2027',
-  }),
+  borderRadius: 8
 }));
+
 const PostAJob = () => {
   return (
-    <Grid container spacing={2}>
-      <Grid size={12}>
-        <Item><JobDetailsCard /></Item>
-      </Grid>
-      <Grid size={6}>
-        <Item>item=6</Item>
-      </Grid>
-      <Grid size={6}>
-        <Item>item=6</Item>
-      </Grid>
-      <Grid size={6}>
-        <Item>item=6</Item>
-      </Grid>
-      <Grid size={6}>
-        <Item>item=6</Item>
-      </Grid>
-    </Grid>
-  )
-}
+    <Box>
+      <Item sx={{ mb: 2 }}>
+        <JobDetailsCard />
+      </Item>
 
-export default PostAJob
+      <Masonry columns={2} spacing={2}>
+        <Item>
+          <SalaryExperience />
+        </Item>
+
+        <Item>
+          <CompanyInfo />
+        </Item>
+
+        <Item>
+          <Requirements />
+        </Item>
+
+        <Item>
+          <ApplicationSettings />
+        </Item>
+      </Masonry>
+    </Box>
+  );
+};
+
+export default PostAJob;

@@ -63,37 +63,37 @@ const AppSidebar: React.FC = () => {
     {
       icon: <GridIcon />,
       name: "Dashboard",
-      path: "/",
+      path: "/dashboard",
     },
     {
       icon: <PostJob />,
       name: "Post a Job",
-      path: "/post-job",
+      path: "/dashboard/post-job",
     },
     {
       icon: <JobListingIcon />,
       name: "Job Listing",
-      path: "/job-listing",
+      path: "/dashboard/job-listing",
     },
     {
       icon: <UserIcon />,
       name: "View Application",
-      path: "/view-application",
+      path: "/dashboard/view-application",
     },
     {
       icon: <ChatIcon />,
       name: "Candidate Chats",
-      path: "/candidate-chats",
+      path: "/dashboard/candidate-chats",
     },
     {
       icon: <Settings />,
       name: "Settings",
-      path: "/settings",
+      path: "/dashboard/settings",
     },
     {
       icon: <UserCircleIcon />,
       name: "User Profile",
-      path: "/profile",
+      path: "/dashboard/profile",
     },
     {
       icon: <LogoutUser />,
@@ -117,12 +117,12 @@ const AppSidebar: React.FC = () => {
 
   const isActive = useCallback(
     (path: string) => {
-      if (path === '/') {
-        return location.pathname === '/';
+      // Dashboard should only be active on exact match
+      if (path === "/dashboard") {
+        return location.pathname === "/dashboard";
       }
 
-      // For other paths, check if the current path starts with the menu path
-      // This handles nested routes if any
+      // Other routes can use startsWith
       return location.pathname.startsWith(path);
     },
     [location.pathname]
@@ -303,7 +303,7 @@ const AppSidebar: React.FC = () => {
           : "justify-start"
           }`}
       >
-        <Link to="/">
+        <Link to="/dashboard">
           {isExpanded || isHovered || isMobileOpen ? (
             <>
               <img

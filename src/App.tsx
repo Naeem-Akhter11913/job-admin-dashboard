@@ -6,7 +6,6 @@ import PostAJob from "./pages/PostAJob";
 import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
-import ThemeTogglerTwo from "./components/common/ThemeTogglerTwo";
 import JobListing from "./pages/JobListing";
 import ViewJobApplication from "./pages/ViewJobApplication";
 import CandidateChats from "./pages/CandidateChats";
@@ -18,11 +17,9 @@ export default function App() {
       <Router>
         <ScrollToTop />
         <Routes>
-          {/* Dashboard Layout */}
-          <Route path="/" element={<AppLayout />}>
+          <Route path="/dashboard" element={<AppLayout />}>
             <Route index element={<Home />} />
 
-            {/* Others Page */}
             <Route path="profile" element={<UserProfiles />} />
             <Route path="post-job" element={<PostAJob />} />
             <Route path="job-listing" element={<JobListing />} />
@@ -32,15 +29,11 @@ export default function App() {
 
           </Route>
 
-          {/* Auth Layout */}
-          <Route path="/signin" element={<SignIn />} />
+          <Route path="/" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
 
         </Routes>
       </Router>
-      <div className="fixed z-50 hidden bottom-6 right-6 sm:block">
-        <ThemeTogglerTwo />
-      </div>
     </>
   );
 }
